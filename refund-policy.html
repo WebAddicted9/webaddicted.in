@@ -15,7 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-K4Jj..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-K4Jj..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Navbar -->
@@ -24,16 +30,27 @@
         <div class="nav-logo">
           <a href="index.html" class="home-link">
             <i class="fas fa-home home-icon"></i>
-            <span>WebAddicted</span>
+            <span>WEB ADDICTED</span>
           </a>
         </div>
         <div class="nav-menu">
-          <a href="index.html" class="home-nav-link">
-            <i class="fas fa-home"></i>
-            Home
-          </a>
-          <a href="#refund" class="active">Refund</a>
-          <a href="index.html#contact">Contact</a>
+          <a
+            href="index.html"
+            onclick="window.location.href='index.html'; return false;"
+            >Home</a
+          >
+          <a
+            href="refund-policy.html"
+            class="active"
+            onclick="window.location.href='refund-policy.html'; return false;"
+            >Refund</a
+          >
+
+          <a
+            href="index.html#contact"
+            onclick="window.location.href='index.html#contact'; return false;"
+            >Contact</a
+          >
         </div>
         <div class="nav-actions">
           <button class="theme-toggle" id="theme-toggle">
@@ -61,74 +78,80 @@
     <!-- Main Content -->
     <section class="refund-section">
       <div class="container">
-        <div class="refund-content">
-          <div class="refund-section-card">
-            <h2><i class="fas fa-shield-alt"></i> Our Refund Guarantee</h2>
-            <p>We stand behind our products with a comprehensive refund policy:</p>
+        <div class="refund-grid">
+          <div class="refund-card highlight">
+            <div class="card-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>30-Day Guarantee</h3>
+            <p>
+              Not satisfied? Get a full refund within 30 days of purchase. No
+              questions asked.
+            </p>
+          </div>
+
+          <div class="refund-card">
+            <div class="card-header">
+              <i class="fas fa-check-circle"></i>
+              <h3>What's Eligible</h3>
+            </div>
             <ul>
-              <li><strong>3-Day Money-Back Guarantee:</strong> Full refund if you're not completely satisfied</li>
-              <li><strong>30-Day Extended Support:</strong> Get help with implementation and customization</li>
-              <li><strong>No Questions Asked:</strong> Simple refund process for qualifying purchases</li>
-              <li><strong>Quality Assurance:</strong> All products tested and verified before delivery</li>
+              <li>Templates & Themes</li>
+              <li>Coding Courses</li>
+              <li>Study Resources</li>
+              <li>Premium Bundles</li>
             </ul>
           </div>
 
-          <div class="refund-section-card">
-            <h2><i class="fas fa-check-circle"></i> Refund Eligibility</h2>
-            <p>You can request a refund for the following products within the specified timeframes:</p>
+          <div class="refund-card">
+            <div class="card-header">
+              <i class="fas fa-times-circle"></i>
+              <h3>Not Eligible</h3>
+            </div>
             <ul>
-              <li><strong>Website Templates:</strong> Within 3 days of purchase</li>
-              <li><strong>Coding Courses:</strong> Within 7 days if less than 20% completed</li>
-              <li><strong>Premium Bundles:</strong> Within 3 days of purchase</li>
-              <li><strong>Study Materials:</strong> Within 3 days of purchase</li>
+              <li>Over 30 days old</li>
+              <li>Courses >20% accessed</li>
+              <li>Sale items</li>
+              <li>Custom services</li>
             </ul>
           </div>
 
-          <div class="refund-section-card">
-            <h2><i class="fas fa-times-circle"></i> Non-Refundable Items</h2>
-            <p>Refunds are not available for:</p>
-            <ul>
-              <li>Purchases older than the eligible timeframe</li>
-              <li>Courses that have been more than 20% accessed</li>
-              <li>Items purchased during promotional sales</li>
-              <li>Custom development services</li>
-              <li>Digital products that have been downloaded and used</li>
-            </ul>
+          <div class="refund-card">
+            <div class="card-header">
+              <i class="fas fa-envelope"></i>
+              <h3>How to Request</h3>
+            </div>
+            <p>
+              Contact support with order details. We'll process within 2-3
+              business days.
+            </p>
           </div>
+        </div>
 
-          <div class="refund-section-card">
-            <h2><i class="fas fa-clock"></i> Processing Times</h2>
-            <p>Refund processing times vary by payment method:</p>
-            <ul>
-              <li><strong>Credit/Debit Cards:</strong> 5-7 business days</li>
-              <li><strong>PayPal:</strong> 1-3 business days</li>
-              <li><strong>Bank Transfer:</strong> 7-10 business days</li>
-              <li><strong>UPI/Digital Wallets:</strong> 1-3 business days</li>
-            </ul>
-          </div>
-
-          <div class="refund-section-card">
-            <h2><i class="fas fa-envelope"></i> How to Request a Refund</h2>
-            <p>To request a refund, follow these simple steps:</p>
-            <ol>
-              <li>Contact our support team at contact@webaddicted.in</li>
-              <li>Include your order number and purchase details</li>
-              <li>Explain the reason for your refund request</li>
-              <li>We'll review your request within 24 hours</li>
-              <li>Approved refunds are processed immediately</li>
-            </ol>
-            <p><strong>Note:</strong> All refund requests are handled on a case-by-case basis to ensure fairness.</p>
-          </div>
-
-          <div class="refund-section-card">
-            <h2><i class="fas fa-life-ring"></i> Alternative Solutions</h2>
-            <p>Before requesting a refund, consider these alternatives:</p>
-            <ul>
-              <li><strong>Technical Support:</strong> Get help with implementation issues</li>
-              <li><strong>Customization Service:</strong> Have us modify the template for you</li>
-              <li><strong>Exchange Option:</strong> Swap for a different template</li>
-              <li><strong>Extended Support:</strong> Additional time to evaluate the product</li>
-            </ul>
+        <div class="processing-section">
+          <h3>Processing Times</h3>
+          <div class="processing-grid">
+            <div class="process-item">
+              <i class="fas fa-credit-card"></i>
+              <div>
+                <strong>Credit Card</strong>
+                <span>5-7 days</span>
+              </div>
+            </div>
+            <div class="process-item">
+              <i class="fab fa-paypal"></i>
+              <div>
+                <strong>PayPal</strong>
+                <span>1-3 days</span>
+              </div>
+            </div>
+            <div class="process-item">
+              <i class="fas fa-university"></i>
+              <div>
+                <strong>Bank Transfer</strong>
+                <span>5-7 days</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -159,7 +182,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <h3>WebAddicted</h3>
+            <h3>WEB ADDICTED</h3>
             <p>Premium website source codes and coding education</p>
           </div>
         </div>
@@ -340,7 +363,11 @@
           gap: 0;
         }
       }
-
+      @media (min-width: 768px) {
+        .home-link i {
+          display: none;
+        }
+      }
       @media (max-width: 480px) {
         .hamburger span {
           width: 20px;
@@ -376,7 +403,11 @@
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 8px;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -408,7 +439,11 @@
       .social-link {
         width: 48px;
         height: 48px;
-        background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+        background: linear-gradient(
+          135deg,
+          var(--bg-color) 0%,
+          var(--bg-secondary) 100%
+        );
         border: 1px solid var(--border-color);
         border-radius: 12px;
         display: flex;
@@ -423,13 +458,17 @@
       }
 
       .social-link::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: -1;
@@ -459,8 +498,13 @@
       }
 
       @keyframes heartbeat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
       }
 
       /* Responsive Footer */
@@ -600,111 +644,188 @@
         background: var(--bg-color);
       }
 
-      .refund-content {
-        max-width: 900px;
-        margin: 0 auto;
+      .refund-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
       }
 
-      .refund-section-card {
+      .refund-card {
         background: white;
         border-radius: 16px;
         padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         border: 1px solid var(--border-color);
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
       }
 
-      .refund-section-card::before {
+      .refund-card::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
       }
 
-      .refund-section-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      .refund-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
       }
 
-      .refund-section-card h2 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
+      .refund-card.highlight {
+        background: linear-gradient(135deg, #059669, #10b981);
+        color: white;
+        border: none;
+      }
+
+      .refund-card.highlight .card-icon {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+
+      .refund-card.highlight h3 {
+        color: white;
+      }
+
+      .refund-card.highlight p {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .refund-card.highlight li {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .card-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 1.5rem;
+        color: white;
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
       }
 
-      .refund-section-card h2 i {
-        font-size: 1.25rem;
-        color: var(--accent-color);
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .card-header i {
+        font-size: 1.5rem;
+        color: var(--primary-color);
         background: var(--bg-secondary);
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      .refund-section-card p {
-        color: var(--text-secondary);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
+      .card-header h3 {
+        color: var(--primary-color);
+        margin: 0;
+        font-size: 1.25rem;
       }
 
-      .refund-section-card ul,
-      .refund-section-card ol {
+      .refund-card p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .refund-card ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
 
-      .refund-section-card li {
+      .refund-card li {
         color: var(--text-secondary);
         margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
-        line-height: 1.5;
+        padding-left: 0;
       }
 
-      .refund-section-card ul li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--accent-color);
-        font-weight: bold;
-      }
-
-      .refund-section-card ol li {
-        counter-increment: step-counter;
-        padding-left: 2rem;
-      }
-
-      .refund-section-card ol li::before {
-        content: counter(step-counter) ".";
-        position: absolute;
-        left: 0;
-        color: var(--primary-color);
-        font-weight: bold;
-        width: 1.5rem;
+      .processing-section {
+        background: linear-gradient(135deg, var(--bg-secondary), white);
+        border-radius: 16px;
+        padding: 3rem 2rem;
+        margin-bottom: 3rem;
         text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
       }
 
-      .refund-section-card li strong {
+      .processing-section h3 {
+        font-size: 1.8rem;
         color: var(--primary-color);
-        font-weight: 600;
+        margin-bottom: 2rem;
       }
 
-      .refund-section-card p strong {
+      .processing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .process-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .process-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .process-item i {
+        font-size: 1.5rem;
         color: var(--primary-color);
-        font-weight: 600;
+        background: var(--bg-secondary);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .process-item strong {
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .process-item span {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
       }
 
       .contact-section {
@@ -767,69 +888,190 @@
 
       /* Responsive Refund Policy Content */
       @media (max-width: 768px) {
-        .refund-content {
-          padding: 0 1rem;
+        .refund-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
         }
 
-        .refund-section-card {
+        .refund-card {
           padding: 1.5rem;
-          margin-bottom: 1.5rem;
         }
 
-        .refund-section-card h2 {
-          font-size: 1.3rem;
+        .refund-card h3 {
+          font-size: 1.25rem;
         }
 
-        .refund-section-card h2 i {
-          width: 35px;
-          height: 35px;
-          font-size: 1.1rem;
-        }
-
-        .refund-section-card p {
+        .refund-card p {
           font-size: 0.95rem;
         }
 
-        .refund-section-card li {
+        .processing-section {
+          padding: 2rem 1rem;
+        }
+
+        .processing-section h3 {
+          font-size: 1.5rem;
+        }
+
+        .processing-grid {
+          gap: 1rem;
+        }
+
+        .process-item {
+          padding: 1rem;
+        }
+
+        .process-item h4 {
+          font-size: 1.1rem;
+        }
+
+        /* Contact Section Responsive */
+        .contact-section {
+          padding: 2rem 1rem;
+        }
+
+        .contact-section h3 {
+          font-size: 1.5rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .contact-item {
+          padding: 1rem;
+        }
+
+        .contact-item i {
+          width: 45px;
+          height: 45px;
+          font-size: 1.25rem;
+        }
+
+        .contact-item strong {
+          font-size: 1rem;
+        }
+
+        .contact-item p {
           font-size: 0.9rem;
-          margin-bottom: 0.6rem;
         }
       }
 
       @media (max-width: 480px) {
-        .refund-section-card {
+        .refund-grid {
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        .refund-card {
           padding: 1.25rem;
-          margin-bottom: 1.25rem;
+          border-radius: 12px;
         }
 
-        .refund-section-card h2 {
-          font-size: 1.2rem;
-          gap: 0.5rem;
+        .refund-card h3 {
+          font-size: 1.1rem;
         }
 
-        .refund-section-card h2 i {
-          width: 32px;
-          height: 32px;
+        .refund-card p {
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+
+        .processing-section {
+          padding: 1.5rem 1rem;
+        }
+
+        .processing-section h3 {
+          font-size: 1.3rem;
+        }
+
+        .processing-grid {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+        }
+
+        .process-item {
+          padding: 0.75rem;
+        }
+
+        /* Contact Section Responsive */
+        .contact-section {
+          padding: 1.5rem 1rem;
+        }
+
+        .contact-section h3 {
+          font-size: 1.3rem;
+        }
+
+        .contact-grid {
+          gap: 0.75rem;
+        }
+
+        .contact-item {
+          padding: 0.75rem;
+          gap: 0.75rem;
+        }
+
+        .contact-item i {
+          width: 40px;
+          height: 40px;
+          font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+          font-size: 0.95rem;
+        }
+
+        .contact-item p {
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .refund-card {
+          padding: 1rem;
+        }
+
+        .refund-card h3 {
           font-size: 1rem;
         }
 
-        .refund-section-card p {
-          font-size: 0.9rem;
-          margin-bottom: 1.25rem;
-        }
-
-        .refund-section-card li {
+        .refund-card p {
           font-size: 0.85rem;
-          margin-bottom: 0.5rem;
-          padding-left: 1.25rem;
         }
 
-        .refund-section-card ol li {
-          padding-left: 1.75rem;
+        .processing-section {
+          padding: 1.25rem 0.75rem;
         }
 
-        .refund-section-card ol li::before {
-          width: 1.25rem;
+        .process-item {
+          padding: 0.5rem;
+        }
+
+        /* Contact Section Responsive */
+        .contact-section {
+          padding: 1.25rem 0.75rem;
+        }
+
+        .contact-item {
+          padding: 0.5rem;
+          gap: 0.5rem;
+        }
+
+        .contact-item i {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
+
+        .contact-item strong {
+          font-size: 0.9rem;
+        }
+
+        .contact-item p {
+          font-size: 0.8rem;
         }
       }
     </style>

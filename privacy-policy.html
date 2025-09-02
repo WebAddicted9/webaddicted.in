@@ -15,7 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-K4Jj..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-K4Jj..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Navbar -->
@@ -24,16 +30,27 @@
         <div class="nav-logo">
           <a href="index.html" class="home-link">
             <i class="fas fa-home home-icon"></i>
-            <span>WebAddicted</span>
+            <span>WEB ADDICTED</span>
           </a>
         </div>
         <div class="nav-menu">
-          <a href="index.html" class="home-nav-link">
-            <i class="fas fa-home"></i>
-            Home
-          </a>
-          <a href="#" class="active">Privacy</a>
-          <a href="index.html#contact">Contact</a>
+          <a
+            href="index.html"
+            onclick="window.location.href='index.html'; return false;"
+            >Home</a
+          >
+          <a
+            href="privacy-policy.html"
+            class="active"
+            onclick="window.location.href='privacy-policy.html'; return false;"
+            >Privacy</a
+          >
+
+          <a
+            href="index.html#contact"
+            onclick="window.location.href='index.html#contact'; return false;"
+            >Contact</a
+          >
         </div>
         <div class="nav-actions">
           <button class="theme-toggle" id="theme-toggle">
@@ -53,7 +70,7 @@
       <div class="container">
         <div class="hero-content">
           <h1>Privacy <span class="highlight">Policy</span></h1>
-          <p>Your privacy matters to us</p>
+          <p>Your privacy matters to us...!</p>
         </div>
       </div>
     </section>
@@ -61,59 +78,106 @@
     <!-- Main Content -->
     <section class="privacy-section">
       <div class="container">
-        <div class="privacy-content">
-          <div class="privacy-section-card">
-            <h2><i class="fas fa-shield-alt"></i> Information We Collect</h2>
-            <p>We collect minimal personal information necessary to provide our services:</p>
-            <ul>
-              <li><strong>Name and Email:</strong> For account creation and communications</li>
-              <li><strong>Payment Information:</strong> Processed securely through third-party providers</li>
-              <li><strong>Usage Data:</strong> IP address, browser type, and pages visited for analytics</li>
-            </ul>
+        <div class="privacy-intro">
+          <div class="intro-card">
+            <i class="fas fa-shield-alt"></i>
+            <h2>Our Commitment</h2>
+            <p>
+              We are committed to protecting your privacy and ensuring the
+              security of your personal information. This policy explains how we
+              collect, use, and protect your data.
+            </p>
+          </div>
+        </div>
+
+        <div class="privacy-grid">
+          <div class="privacy-card">
+            <div class="card-header">
+              <i class="fas fa-database"></i>
+              <h3>What We Collect</h3>
+            </div>
+            <div class="info-list">
+              <div class="info-item">
+                <strong>Personal:</strong> Name, email, payment info
+              </div>
+              <div class="info-item">
+                <strong>Usage:</strong> IP address, browser, pages visited
+              </div>
+              <div class="info-item">
+                <strong>Cookies:</strong> Essential, analytics, marketing
+              </div>
+            </div>
           </div>
 
-          <div class="privacy-section-card">
-            <h2><i class="fas fa-cogs"></i> How We Use Your Information</h2>
-            <p>Your data is used solely for:</p>
-            <ul>
-              <li>Processing orders and payments</li>
-              <li>Managing your account and providing support</li>
-              <li>Sending important updates and notifications</li>
-              <li>Improving our website and services</li>
-            </ul>
+          <div class="privacy-card">
+            <div class="card-header">
+              <i class="fas fa-cogs"></i>
+              <h3>How We Use It</h3>
+            </div>
+            <div class="usage-list">
+              <div class="usage-item">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Process orders & payments</span>
+              </div>
+              <div class="usage-item">
+                <i class="fas fa-user-cog"></i>
+                <span>Manage accounts</span>
+              </div>
+              <div class="usage-item">
+                <i class="fas fa-envelope"></i>
+                <span>Send communications</span>
+              </div>
+              <div class="usage-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Improve services</span>
+              </div>
+            </div>
           </div>
 
-          <div class="privacy-section-card">
-            <h2><i class="fas fa-lock"></i> Data Protection</h2>
-            <p>We implement industry-standard security measures:</p>
-            <ul>
-              <li>SSL encryption for all data transmission</li>
-              <li>Secure servers with regular security audits</li>
-              <li>Limited access to personal information</li>
-              <li>Regular data backups and monitoring</li>
-            </ul>
+          <div class="privacy-card">
+            <div class="card-header">
+              <i class="fas fa-lock"></i>
+              <h3>Data Security</h3>
+            </div>
+            <p>We protect your data with:</p>
+            <div class="security-list">
+              <div class="security-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>SSL encryption</span>
+              </div>
+              <div class="security-item">
+                <i class="fas fa-key"></i>
+                <span>Access controls</span>
+              </div>
+              <div class="security-item">
+                <i class="fas fa-server"></i>
+                <span>Secure storage</span>
+              </div>
+              <div class="security-item">
+                <i class="fas fa-search"></i>
+                <span>Regular audits</span>
+              </div>
+            </div>
           </div>
 
-          <div class="privacy-section-card">
-            <h2><i class="fas fa-user-shield"></i> Your Rights</h2>
-            <p>You have the right to:</p>
-            <ul>
-              <li>Access and review your personal data</li>
-              <li>Update or correct your information</li>
-              <li>Request deletion of your data</li>
-              <li>Opt-out of marketing communications</li>
-            </ul>
-          </div>
-
-          <div class="privacy-section-card">
-            <h2><i class="fas fa-cookie-bite"></i> Cookies & Tracking</h2>
-            <p>We use cookies to enhance your experience:</p>
-            <ul>
-              <li><strong>Essential Cookies:</strong> Required for website functionality</li>
-              <li><strong>Analytics Cookies:</strong> Help us understand user behavior</li>
-              <li><strong>Marketing Cookies:</strong> Used for targeted advertising (optional)</li>
-            </ul>
-            <p>You can manage cookie preferences through your browser settings.</p>
+          <div class="privacy-card">
+            <div class="card-header">
+              <i class="fas fa-user-shield"></i>
+              <h3>Your Rights</h3>
+            </div>
+            <div class="rights-summary">
+              <div class="right-summary">
+                <strong>Access & Control:</strong> View, update, delete your
+                data
+              </div>
+              <div class="right-summary">
+                <strong>Privacy Choices:</strong> Opt-out of marketing, manage
+                cookies
+              </div>
+              <div class="right-summary">
+                <strong>Data Portability:</strong> Export your information
+              </div>
+            </div>
           </div>
         </div>
 
@@ -144,7 +208,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <h3>WebAddicted</h3>
+            <h3>WEB ADDICTED</h3>
             <p>Premium website source codes and coding education</p>
           </div>
         </div>
@@ -325,7 +389,11 @@
           gap: 0;
         }
       }
-
+      @media (min-width: 768px) {
+        .home-link i {
+          display: none;
+        }
+      }
       @media (max-width: 480px) {
         .hamburger span {
           width: 20px;
@@ -361,7 +429,11 @@
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 8px;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -393,7 +465,11 @@
       .social-link {
         width: 48px;
         height: 48px;
-        background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+        background: linear-gradient(
+          135deg,
+          var(--bg-color) 0%,
+          var(--bg-secondary) 100%
+        );
         border: 1px solid var(--border-color);
         border-radius: 12px;
         display: flex;
@@ -408,13 +484,17 @@
       }
 
       .social-link::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: -1;
@@ -444,8 +524,13 @@
       }
 
       @keyframes heartbeat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
       }
 
       /* Responsive Footer */
@@ -585,90 +670,209 @@
         background: var(--bg-color);
       }
 
-      .privacy-content {
-        max-width: 900px;
+      .privacy-intro {
+        margin-bottom: 4rem;
+      }
+
+      .intro-card {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        color: white;
+        border-radius: 16px;
+        padding: 3rem 2rem;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
+      }
+
+      .intro-card i {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+
+      .intro-card h2 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+
+      .intro-card p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 600px;
         margin: 0 auto;
       }
 
-      .privacy-section-card {
+      .privacy-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .privacy-card {
         background: white;
         border-radius: 16px;
         padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         border: 1px solid var(--border-color);
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
       }
 
-      .privacy-section-card::before {
+      .privacy-card::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
       }
 
-      .privacy-section-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      .privacy-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
       }
 
-      .privacy-section-card h2 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
+      .card-header {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
       }
 
-      .privacy-section-card h2 i {
-        font-size: 1.25rem;
-        color: var(--accent-color);
+      .card-header i {
+        font-size: 1.5rem;
+        color: var(--primary-color);
         background: var(--bg-secondary);
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      .privacy-section-card p {
-        color: var(--text-secondary);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
+      .card-header h3 {
+        color: var(--primary-color);
+        margin: 0;
+        font-size: 1.25rem;
       }
 
-      .privacy-section-card ul {
-        list-style: none;
-        padding: 0;
+      .privacy-card p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .info-item {
+        background: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+      }
+
+      .info-item strong {
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .info-item {
+        color: var(--text-secondary);
         margin: 0;
       }
 
-      .privacy-section-card li {
-        color: var(--text-secondary);
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
-        line-height: 1.5;
+      .usage-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
 
-      .privacy-section-card li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
+      .usage-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+      }
+
+      .usage-item i {
         color: var(--accent-color);
-        font-weight: bold;
+        font-size: 1.2rem;
+        width: 20px;
       }
 
-      .privacy-section-card li strong {
+      .usage-item span {
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .security-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .security-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .security-item i {
         color: var(--primary-color);
-        font-weight: 600;
+        font-size: 1rem;
+        width: 20px;
+      }
+
+      .security-item span {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .rights-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .right-summary {
+        background: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+      }
+
+      .right-summary strong {
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .right-summary {
+        color: var(--text-secondary);
+        margin: 0;
       }
 
       .contact-section {
@@ -731,61 +935,233 @@
 
       /* Responsive Privacy Policy Content */
       @media (max-width: 768px) {
-        .privacy-content {
-          padding: 0 1rem;
+        .privacy-intro {
+          margin-bottom: 2rem;
         }
 
-        .privacy-section-card {
+        .intro-card {
           padding: 1.5rem;
-          margin-bottom: 1.5rem;
+          text-align: center;
         }
 
-        .privacy-section-card h2 {
-          font-size: 1.3rem;
+        .intro-card i {
+          font-size: 2rem;
+          margin-bottom: 1rem;
         }
 
-        .privacy-section-card h2 i {
-          width: 35px;
-          height: 35px;
-          font-size: 1.1rem;
+        .intro-card h2 {
+          font-size: 1.5rem;
         }
 
-        .privacy-section-card p {
+        .intro-card p {
           font-size: 0.95rem;
         }
 
-        .privacy-section-card li {
+        .privacy-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .privacy-card {
+          padding: 1.5rem;
+        }
+
+        .privacy-card h3 {
+          font-size: 1.25rem;
+        }
+
+        .info-list,
+        .usage-list {
+          gap: 0.75rem;
+        }
+
+        .info-item,
+        .usage-item {
           font-size: 0.9rem;
-          margin-bottom: 0.6rem;
+          padding: 0.5rem;
+        }
+
+        .usage-item span {
+          font-size: 0.9rem;
+        }
+
+        /* Contact Section Responsive */
+        .contact-section {
+          padding: 2rem 1rem;
+        }
+
+        .contact-section h3 {
+          font-size: 1.5rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .contact-item {
+          padding: 1rem;
+        }
+
+        .contact-item i {
+          width: 45px;
+          height: 45px;
+          font-size: 1.25rem;
+        }
+
+        .contact-item strong {
+          font-size: 1rem;
+        }
+
+        .contact-item p {
+          font-size: 0.9rem;
         }
       }
 
       @media (max-width: 480px) {
-        .privacy-section-card {
-          padding: 1.25rem;
-          margin-bottom: 1.25rem;
+        .privacy-intro {
+          margin-bottom: 1.5rem;
         }
 
-        .privacy-section-card h2 {
-          font-size: 1.2rem;
+        .intro-card {
+          padding: 1.25rem;
+        }
+
+        .intro-card i {
+          font-size: 1.8rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .intro-card h2 {
+          font-size: 1.3rem;
+        }
+
+        .intro-card p {
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+
+        .privacy-grid {
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        .privacy-card {
+          padding: 1.25rem;
+          border-radius: 12px;
+        }
+
+        .privacy-card h3 {
+          font-size: 1.1rem;
+        }
+
+        .info-list,
+        .usage-list {
           gap: 0.5rem;
         }
 
-        .privacy-section-card h2 i {
-          width: 32px;
-          height: 32px;
+        .info-item,
+        .usage-item {
+          font-size: 0.85rem;
+          padding: 0.4rem;
+        }
+
+        .usage-item span {
+          font-size: 0.85rem;
+        }
+
+        /* Contact Section Responsive */
+        .contact-section {
+          padding: 1.5rem 1rem;
+        }
+
+        .contact-section h3 {
+          font-size: 1.3rem;
+        }
+
+        .contact-grid {
+          gap: 0.75rem;
+        }
+
+        .contact-item {
+          padding: 0.75rem;
+          gap: 0.75rem;
+        }
+
+        .contact-item i {
+          width: 40px;
+          height: 40px;
+          font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+          font-size: 0.95rem;
+        }
+
+        .contact-item p {
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .intro-card {
+          padding: 1rem;
+        }
+
+        .intro-card i {
+          font-size: 1.6rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .intro-card h2 {
+          font-size: 1.2rem;
+        }
+
+        .intro-card p {
+          font-size: 0.85rem;
+        }
+
+        .privacy-card {
+          padding: 1rem;
+        }
+
+        .privacy-card h3 {
           font-size: 1rem;
         }
 
-        .privacy-section-card p {
-          font-size: 0.9rem;
-          margin-bottom: 1.25rem;
+        .info-item,
+        .usage-item {
+          font-size: 0.8rem;
+          padding: 0.3rem;
         }
 
-        .privacy-section-card li {
-          font-size: 0.85rem;
-          margin-bottom: 0.5rem;
-          padding-left: 1.25rem;
+        .usage-item span {
+          font-size: 0.8rem;
+        }
+
+        /* Contact Section Responsive */
+        .contact-section {
+          padding: 1.25rem 0.75rem;
+        }
+
+        .contact-item {
+          padding: 0.5rem;
+          gap: 0.5rem;
+        }
+
+        .contact-item i {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
+
+        .contact-item strong {
+          font-size: 0.9rem;
+        }
+
+        .contact-item p {
+          font-size: 0.8rem;
         }
       }
     </style>

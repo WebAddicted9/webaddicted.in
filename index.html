@@ -15,7 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-K4Jj..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-K4Jj..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Navbar -->
@@ -32,7 +38,11 @@
           <a href="#notes">Notes</a> -->
           <a href="#reviews">Reviews</a>
           <a href="#faq">FAQ</a>
-          <a href="about-us.html">About Us</a>
+          <a
+            href="about-us.html"
+            onclick="window.location.href='about-us.html';"
+            >About Us</a
+          >
           <a href="#contact">Contact</a>
         </div>
         <div class="nav-actions">
@@ -1181,54 +1191,74 @@
             </div>
           </div>
           <!-- EmailJS Library -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+          <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+          ></script>
 
-<script>
-  (function() {
-    emailjs.init("enTN4hqk9PE13A08o"); // <-- Your Public Key
-  })();
-</script>
+          <script>
+            (function () {
+              emailjs.init("enTN4hqk9PE13A08o"); // <-- Your Public Key
+            })();
+          </script>
 
-<div class="contact-form">
-  <form id="contactForm">
-    <div class="form-group">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="from_name" required />
-    </div>
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="reply_to" required />
-    </div>
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-    </div>
-    
-    <!-- Hidden subject field for {{title}} -->
-    <input type="hidden" name="title" value="New Contact Form Message" />
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="from_name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="reply_to" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
 
-    <button type="submit" class="btn btn-primary">
-      Send Message
-    </button>
-  </form>
-</div>
+              <!-- Hidden subject field for {{title}} -->
+              <input
+                type="hidden"
+                name="title"
+                value="New Contact Form Message"
+              />
 
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
 
-    emailjs.sendForm("service_40mll6w", "template_razcgqk", this)
-      .then(function() {
-        alert("✅ Message sent successfully!");
-        document.getElementById("contactForm").reset();
-      }, function(error) {
-        console.error("EmailJS Error:", error);
-        alert("❌ Failed to send message. Error: " + JSON.stringify(error));
-      });
-  });
-</script>
+          <script>
+            document
+              .getElementById("contactForm")
+              .addEventListener("submit", function (e) {
+                e.preventDefault();
 
+                emailjs
+                  .sendForm("service_40mll6w", "template_rezcgqk", this)
+                  .then(
+                    function () {
+                      alert("✅ Message sent successfully!");
+                      document.getElementById("contactForm").reset();
+                    },
+                    function (error) {
+                      console.error("EmailJS Error:", error);
+                      alert(
+                        "❌ Failed to send message. Error: " +
+                          JSON.stringify(error)
+                      );
+                    }
+                  );
+              });
+          </script>
         </div>
       </div>
     </section>
@@ -1240,7 +1270,7 @@
         <div class="footer-main">
           <div class="footer-brand">
             <div class="footer-logo">
-              <h3>WebAddicted</h3>
+              <h3>WEB ADDICTED</h3>
               <p>
                 Premium website source codes and coding education platform for
                 developers and businesses worldwide.
@@ -1289,6 +1319,7 @@
               <a href="about-us.html"
                 ><i class="fas fa-info-circle"></i> About Us</a
               >
+
               <a href="privacy-policy.html"
                 ><i class="fas fa-shield-alt"></i> Privacy Policy</a
               >
@@ -1315,7 +1346,7 @@
               </div>
               <div class="contact-info-item">
                 <i class="fas fa-clock"></i>
-                <span>24/7</span>
+                <span>24/7 Support</span>
               </div>
             </div>
           </div>

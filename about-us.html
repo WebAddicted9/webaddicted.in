@@ -15,7 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-K4Jj..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-K4Jj..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Navbar -->
@@ -24,16 +30,27 @@
         <div class="nav-logo">
           <a href="index.html" class="home-link">
             <i class="fas fa-home home-icon"></i>
-            <span>WebAddicted</span>
+            <span>WEB ADDICTED</span>
           </a>
         </div>
         <div class="nav-menu">
-          <a href="index.html" class="home-nav-link">
-            <i class="fas fa-home"></i>
-            Home
-          </a>
-          <a href="about-us.html" class="active">About</a>
-          <a href="index.html#contact">Contact</a>
+          <a
+            href="index.html"
+            onclick="window.location.href='index.html'; return false;"
+            >Home</a
+          >
+          <a
+            href="about-us.html"
+            class="active"
+            onclick="window.location.href='about-us.html'; return false;"
+            >About</a
+          >
+
+          <a
+            href="index.html#contact"
+            onclick="window.location.href='index.html#contact'; return false;"
+            >Contact</a
+          >
         </div>
         <div class="nav-actions">
           <button class="theme-toggle" id="theme-toggle">
@@ -52,7 +69,7 @@
     <section class="hero-section">
       <div class="container">
         <div class="hero-content">
-          <h1>About <span class="highlight">WebAddicted</span></h1>
+          <h1>About <span class="highlight">WebAddicted !</span></h1>
           <p>
             Empowering developers worldwide with premium website templates and
             coding education
@@ -130,7 +147,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <h3>WebAddicted</h3>
+            <h3>WEB ADDICTED</h3>
             <p>Premium website source codes and coding education</p>
           </div>
         </div>
@@ -308,7 +325,11 @@
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 8px;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -340,7 +361,11 @@
       .social-link {
         width: 48px;
         height: 48px;
-        background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+        background: linear-gradient(
+          135deg,
+          var(--bg-color) 0%,
+          var(--bg-secondary) 100%
+        );
         border: 1px solid var(--border-color);
         border-radius: 12px;
         display: flex;
@@ -355,13 +380,17 @@
       }
 
       .social-link::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: -1;
@@ -391,8 +420,13 @@
       }
 
       @keyframes heartbeat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
       }
 
       /* Responsive Footer */
@@ -424,7 +458,11 @@
           font-size: 0.9rem;
         }
       }
-
+      @media (min-width: 768px) {
+        .home-link i {
+          display: none;
+        }
+      }
       @media (max-width: 480px) {
         .footer-content {
           padding: 25px 0 12px;
@@ -447,51 +485,51 @@
           height: 44px;
         }
 
-              .footer-bottom p {
-        font-size: 0.85rem;
-      }
-    }
-
-    /* Mobile Navigation */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
+        .footer-bottom p {
+          font-size: 0.85rem;
+        }
       }
 
-      .nav-menu {
-        display: none;
+      /* Mobile Navigation */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-menu {
+          display: none;
+        }
+
+        .nav-container {
+          position: relative;
+        }
+
+        .home-link span {
+          display: none;
+        }
+
+        .home-link {
+          gap: 0;
+        }
       }
 
-      .nav-container {
-        position: relative;
+      @media (max-width: 480px) {
+        .hamburger span {
+          width: 20px;
+          height: 2px;
+          margin: 2px 0;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
       }
 
-      .home-link span {
-        display: none;
-      }
-
-      .home-link {
-        gap: 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hamburger span {
-        width: 20px;
-        height: 2px;
-        margin: 2px 0;
-      }
-
-      .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-
-      .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
-    }
-
-    .hero-section {
+      .hero-section {
         background: linear-gradient(
           135deg,
           var(--primary-color),

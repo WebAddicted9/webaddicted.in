@@ -15,7 +15,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-K4Jj..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-K4Jj..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Navbar -->
@@ -24,16 +30,27 @@
         <div class="nav-logo">
           <a href="index.html" class="home-link">
             <i class="fas fa-home home-icon"></i>
-            <span>WebAddicted</span>
+            <span>WEB ADDICTED</span>
           </a>
         </div>
         <div class="nav-menu">
-          <a href="index.html" class="home-nav-link">
-            <i class="fas fa-home"></i>
-            Home
-          </a>
-          <a href="#terms" class="active">Terms</a>
-          <a href="index.html#contact">Contact</a>
+          <a
+            href="index.html"
+            onclick="window.location.href='index.html'; return false;"
+            >Home</a
+          >
+          <a
+            href="terms-and-conditions.html"
+            class="active"
+            onclick="window.location.href='terms-and-conditions.html'; return false;"
+            >Terms</a
+          >
+
+          <a
+            href="index.html#contact"
+            onclick="window.location.href='index.html#contact'; return false;"
+            >Contact</a
+          >
         </div>
         <div class="nav-actions">
           <button class="theme-toggle" id="theme-toggle">
@@ -61,72 +78,71 @@
     <!-- Main Content -->
     <section class="terms-section">
       <div class="container">
-        <div class="terms-content">
-          <div class="terms-section-card">
-            <h2><i class="fas fa-handshake"></i> Acceptance of Terms</h2>
-            <p>By accessing and using WebAddicted services, you accept and agree to be bound by these terms and conditions:</p>
-            <ul>
-              <li>These terms apply to all website templates, courses, and services</li>
-              <li>You must be at least 18 years old to use our services</li>
-              <li>Your continued use constitutes acceptance of any updates to these terms</li>
-            </ul>
+        <div class="terms-grid">
+          <div class="terms-card">
+            <div class="card-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Acceptance</h3>
+            <p>
+              By using our services, you agree to these terms. Please don't use
+              our services if you disagree.
+            </p>
           </div>
 
-          <div class="terms-section-card">
-            <h2><i class="fas fa-file-contract"></i> License & Usage Rights</h2>
-            <p>Upon purchase, you receive a non-exclusive, non-transferable license to:</p>
-            <ul>
-              <li>Use templates for personal and commercial projects</li>
-              <li>Modify templates to suit your needs</li>
-              <li>Create multiple websites using our templates</li>
-              <li>Include templates in client projects (with proper licensing)</li>
-            </ul>
+          <div class="terms-card">
+            <div class="card-icon">
+              <i class="fas fa-key"></i>
+            </div>
+            <h3>Use License</h3>
+            <p>
+              You get a non-exclusive license to use our templates for personal
+              and commercial projects.
+            </p>
           </div>
 
-          <div class="terms-section-card">
-            <h2><i class="fas fa-ban"></i> Prohibited Uses</h2>
-            <p>The following activities are strictly prohibited:</p>
-            <ul>
-              <li>Reselling or redistributing our templates</li>
-              <li>Sharing templates with unauthorized users</li>
-              <li>Using templates for illegal or harmful purposes</li>
-              <li>Removing copyright notices from templates</li>
-              <li>Creating derivative works for commercial resale</li>
-            </ul>
+          <div class="terms-card">
+            <div class="card-icon">
+              <i class="fas fa-ban"></i>
+            </div>
+            <h3>Restrictions</h3>
+            <p>
+              No reselling, redistribution, or illegal use of our templates.
+              Keep copyright notices intact.
+            </p>
           </div>
 
-          <div class="terms-section-card">
-            <h2><i class="fas fa-credit-card"></i> Payment & Refunds</h2>
-            <p>Payment terms and refund policy:</p>
-            <ul>
-              <li>All prices are in Indian Rupees (INR) unless specified otherwise</li>
-              <li>Payments are processed securely through third-party providers</li>
-              <li>Digital products are delivered instantly after payment</li>
-              <li>3-day money-back guarantee for all purchases</li>
-              <li>Refunds available only if product doesn't match description</li>
-            </ul>
+          <div class="terms-card">
+            <div class="card-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Courses</h3>
+            <p>
+              Lifetime access to courses. 7-day refund window. No refunds after
+              course access.
+            </p>
           </div>
 
-          <div class="terms-section-card">
-            <h2><i class="fas fa-shield-alt"></i> Intellectual Property</h2>
-            <p>Copyright and ownership rights:</p>
-            <ul>
-              <li>All templates and content are copyrighted by WebAddicted</li>
-              <li>You own the websites you create using our templates</li>
-              <li>We retain ownership of the template source code and designs</li>
-              <li>You may not claim ownership of our intellectual property</li>
-            </ul>
+          <div class="terms-card">
+            <div class="card-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3>Payments</h3>
+            <p>
+              All prices in USD. Secure payment processing. Instant digital
+              delivery.
+            </p>
           </div>
 
-          <div class="terms-section-card">
-            <h2><i class="fas fa-exclamation-triangle"></i> Limitation of Liability</h2>
-            <p>Service limitations and disclaimers:</p>
-            <ul>
-              <li>Templates are provided "as is" without warranty</li>
-              <li>We are not responsible for business losses or damages</li>
-              <li>Support is provided on a best-effort basis</li>
-              <li>Maximum liability is limited to purchase price</li>
-            </ul>
+          <div class="terms-card">
+            <div class="card-icon">
+              <i class="fas fa-copyright"></i>
+            </div>
+            <h3>Copyright</h3>
+            <p>
+              All content is copyrighted. You own your websites, we own the
+              template code.
+            </p>
           </div>
         </div>
 
@@ -157,7 +173,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <h3>WebAddicted</h3>
+            <h3>WEB ADDICTED</h3>
             <p>Premium website source codes and coding education</p>
           </div>
         </div>
@@ -317,6 +333,7 @@
       }
 
       /* Mobile Navigation */
+
       @media (max-width: 768px) {
         .hamburger {
           display: flex;
@@ -374,7 +391,11 @@
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 8px;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -406,7 +427,11 @@
       .social-link {
         width: 48px;
         height: 48px;
-        background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+        background: linear-gradient(
+          135deg,
+          var(--bg-color) 0%,
+          var(--bg-secondary) 100%
+        );
         border: 1px solid var(--border-color);
         border-radius: 12px;
         display: flex;
@@ -421,13 +446,17 @@
       }
 
       .social-link::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: -1;
@@ -457,8 +486,13 @@
       }
 
       @keyframes heartbeat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
       }
 
       /* Responsive Footer */
@@ -598,85 +632,73 @@
         background: var(--bg-color);
       }
 
-      .terms-content {
-        max-width: 900px;
-        margin: 0 auto;
+      .terms-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
       }
 
-      .terms-section-card {
+      .terms-card {
         background: white;
         border-radius: 16px;
         padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         border: 1px solid var(--border-color);
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
       }
 
-      .terms-section-card::before {
+      .terms-card::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
       }
 
-      .terms-section-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      .terms-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
       }
 
-      .terms-section-card h2 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .terms-section-card h2 i {
-        font-size: 1.25rem;
-        color: var(--accent-color);
-        background: var(--bg-secondary);
-        width: 40px;
-        height: 40px;
+      .card-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 1.5rem;
+        color: white;
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
       }
 
-      .terms-section-card p {
+      .terms-card h3 {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .terms-card p {
         color: var(--text-secondary);
         line-height: 1.6;
-        margin-bottom: 1.5rem;
-      }
-
-      .terms-section-card ul {
-        list-style: none;
-        padding: 0;
         margin: 0;
-      }
-
-      .terms-section-card li {
-        color: var(--text-secondary);
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
-        line-height: 1.5;
-      }
-
-      .terms-section-card li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--accent-color);
-        font-weight: bold;
       }
 
       .contact-section {
@@ -742,63 +764,144 @@
         margin: 0;
       }
 
-      /* Responsive Terms Content */
+      /* Responsive Terms Cards */
       @media (max-width: 768px) {
-        .terms-content {
-          padding: 0 1rem;
+        .terms-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
         }
 
-        .terms-section-card {
+        .terms-card {
           padding: 1.5rem;
-          margin-bottom: 1.5rem;
         }
 
-        .terms-section-card h2 {
-          font-size: 1.3rem;
+        .card-header h3 {
+          font-size: 1.25rem;
         }
 
-        .terms-section-card h2 i {
-          width: 35px;
-          height: 35px;
-          font-size: 1.1rem;
+        .contact-section {
+          padding: 2rem 1rem;
         }
 
-        .terms-section-card p {
-          font-size: 0.95rem;
+        .contact-section h3 {
+          font-size: 1.5rem;
         }
 
-        .terms-section-card li {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .contact-item {
+          padding: 1rem;
+        }
+
+        .contact-item i {
+          width: 45px;
+          height: 45px;
+          font-size: 1.25rem;
+        }
+
+        .contact-item strong {
+          font-size: 1rem;
+        }
+
+        .contact-item p {
           font-size: 0.9rem;
-          margin-bottom: 0.6rem;
         }
       }
 
       @media (max-width: 480px) {
-        .terms-section-card {
+        .terms-grid {
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        .terms-card {
           padding: 1.25rem;
-          margin-bottom: 1.25rem;
+          border-radius: 12px;
         }
 
-        .terms-section-card h2 {
-          font-size: 1.2rem;
-          gap: 0.5rem;
+        .card-header {
+          margin-bottom: 1rem;
         }
 
-        .terms-section-card h2 i {
-          width: 32px;
-          height: 32px;
+        .card-header h3 {
+          font-size: 1.1rem;
+        }
+
+        .terms-card p {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        .contact-section {
+          padding: 1.5rem 1rem;
+        }
+
+        .contact-section h3 {
+          font-size: 1.3rem;
+        }
+
+        .contact-grid {
+          gap: 0.75rem;
+        }
+
+        .contact-item {
+          padding: 0.75rem;
+          gap: 0.75rem;
+        }
+
+        .contact-item i {
+          width: 40px;
+          height: 40px;
+          font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+          font-size: 0.95rem;
+        }
+
+        .contact-item p {
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .terms-card {
+          padding: 1rem;
+        }
+
+        .card-header h3 {
           font-size: 1rem;
         }
 
-        .terms-section-card p {
+        .terms-card p {
           font-size: 0.9rem;
-          margin-bottom: 1.25rem;
         }
 
-        .terms-section-card li {
-          font-size: 0.85rem;
-          margin-bottom: 0.5rem;
-          padding-left: 1.25rem;
+        .contact-section {
+          padding: 1.25rem 0.75rem;
+        }
+
+        .contact-item {
+          padding: 0.5rem;
+          gap: 0.5rem;
+        }
+
+        .contact-item i {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
+
+        .contact-item strong {
+          font-size: 0.9rem;
+        }
+
+        .contact-item p {
+          font-size: 0.8rem;
         }
       }
     </style>
