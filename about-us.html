@@ -15,21 +15,24 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-K4Jj..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-logo">
-          <a href="index.html">WebAddicted</a>
+          <a href="index.html" class="home-link">
+            <i class="fas fa-home home-icon"></i>
+            <span>WebAddicted</span>
+          </a>
         </div>
         <div class="nav-menu">
-          <a href="index.html">Home</a>
-          <a href="#">About</a>
+          <a href="index.html" class="home-nav-link">
+            <i class="fas fa-home"></i>
+            Home
+          </a>
+          <a href="about-us.html" class="active">About</a>
           <a href="index.html#contact">Contact</a>
         </div>
         <div class="nav-actions">
@@ -130,29 +133,6 @@
             <h3>WebAddicted</h3>
             <p>Premium website source codes and coding education</p>
           </div>
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>Products</h4>
-              <a href="index.html#bundle">Website Bundle</a>
-              <a href="index.html#websites">Individual Templates</a>
-              <!-- <a href="index.html#courses">Coding Courses</a>
-                        <a href="index.html#notes">Study Notes</a> -->
-            </div>
-            <div class="footer-column">
-              <h4>Support</h4>
-              <a href="index.html#faq">FAQ</a>
-              <a href="index.html#contact">Contact Us</a>
-              <!-- <a href="#">Documentation</a>
-                        <a href="#">Support Portal</a> -->
-            </div>
-            <div class="footer-column">
-              <h4>Company</h4>
-              <a href="about-us.html">About Us</a>
-              <a href="privacy-policy.html">Privacy Policy</a>
-              <a href="terms-and-conditions.html">Terms of Service</a>
-              <a href="refund-policy.html">Refund Policy</a>
-            </div>
-          </div>
         </div>
         <div class="footer-bottom">
           <div class="social-links">
@@ -201,7 +181,317 @@
     <script src="js/script.js"></script>
 
     <style>
-      .hero-section {
+      /* Home Icon and Navigation Styles */
+      .home-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .home-link:hover {
+        transform: translateX(-2px);
+      }
+
+      .home-icon {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+
+      .home-link:hover .home-icon {
+        color: var(--accent-color);
+        transform: scale(1.1);
+      }
+
+      .home-nav-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .home-nav-link i {
+        font-size: 0.9rem;
+      }
+
+      /* Hamburger Menu Animation */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .hamburger:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-primary);
+        margin: 3px 0;
+        transition: all 0.3s ease;
+        border-radius: 1px;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile Menu */
+      .nav-menu.mobile-menu {
+        display: flex !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-color);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--border-color);
+        animation: slideDown 0.3s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .nav-menu.mobile-menu a {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 8px;
+      }
+
+      .nav-menu.mobile-menu a:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      /* Professional Footer Styling */
+      .footer-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0 20px;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 20px;
+      }
+
+      .footer-logo {
+        text-align: center;
+      }
+
+      .footer-logo h3 {
+        color: var(--primary-color);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .footer-logo p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .social-link {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-secondary) 100%);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .social-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      .social-link:hover {
+        color: white;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+      }
+
+      .social-link:hover::before {
+        opacity: 1;
+      }
+
+      .footer-bottom p {
+        color: var(--text-secondary);
+        margin: 0;
+        font-size: 0.95rem;
+        text-align: center;
+        flex: 1;
+      }
+
+      .heart-icon {
+        color: #e11d48;
+        animation: heartbeat 1.5s ease-in-out infinite;
+      }
+
+      @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+
+      /* Responsive Footer */
+      @media (max-width: 768px) {
+        .footer-content {
+          padding: 30px 0 15px;
+        }
+
+        .footer-logo h3 {
+          font-size: 1.8rem;
+        }
+
+        .footer-logo p {
+          font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 24px;
+          text-align: center;
+        }
+
+        .social-links {
+          order: 1;
+        }
+
+        .footer-bottom p {
+          order: 2;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer-content {
+          padding: 25px 0 12px;
+        }
+
+        .footer-logo h3 {
+          font-size: 1.6rem;
+        }
+
+        .footer-logo p {
+          font-size: 0.9rem;
+        }
+
+        .social-links {
+          gap: 12px;
+        }
+
+        .social-link {
+          width: 44px;
+          height: 44px;
+        }
+
+              .footer-bottom p {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Mobile Navigation */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .nav-container {
+        position: relative;
+      }
+
+      .home-link span {
+        display: none;
+      }
+
+      .home-link {
+        gap: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hamburger span {
+        width: 20px;
+        height: 2px;
+        margin: 2px 0;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+
+    .hero-section {
         background: linear-gradient(
           135deg,
           var(--primary-color),

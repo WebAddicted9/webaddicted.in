@@ -15,10 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-K4Jj..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <!-- Navbar -->
@@ -1183,30 +1180,55 @@
               </div>
             </div>
           </div>
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">
-                Send Message
-              </button>
-            </form>
-          </div>
+          <!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  (function() {
+    emailjs.init("enTN4hqk9PE13A08o"); // <-- Your Public Key
+  })();
+</script>
+
+<div class="contact-form">
+  <form id="contactForm">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="from_name" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="reply_to" required />
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    
+    <!-- Hidden subject field for {{title}} -->
+    <input type="hidden" name="title" value="New Contact Form Message" />
+
+    <button type="submit" class="btn btn-primary">
+      Send Message
+    </button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_40mll6w", "template_razcgqk", this)
+      .then(function() {
+        alert("✅ Message sent successfully!");
+        document.getElementById("contactForm").reset();
+      }, function(error) {
+        console.error("EmailJS Error:", error);
+        alert("❌ Failed to send message. Error: " + JSON.stringify(error));
+      });
+  });
+</script>
+
         </div>
       </div>
     </section>
