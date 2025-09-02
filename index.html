@@ -196,44 +196,69 @@
 
     <!-- Bundle Section -->
     <section id="bundle" class="bundle-section">
+      <!-- Canvas for Confetti Animation -->
+      <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+      <!-- Compact Bundle Content -->
       <div class="container">
-        <div class="bundle-content">
-          <div class="bundle-image">
-            <img
-              src="Images/bundleImage.png"
-              alt="All Website Bundle"
-              class="bundle-img"
-            />
+        <div class="bundle-content-compact">
+          <!-- Left Side - Image & Badge -->
+          <div class="bundle-left">
+            <div class="bundle-image-compact">
+              <img src="Images/bundleImage.png" alt="All Website Bundle" class="bundle-img" />
+              <div class="bundle-badge-compact">
+                <span class="badge-fire">🔥</span>
+                <span class="badge-text-compact">95% OFF</span>
+              </div>
+            </div>
           </div>
-          <div class="bundle-info">
-            <h2>All Website Bundle</h2>
-            <p>
-              Get access to all 10 premium website source codes with lifetime
-              updates and support
-            </p>
-            <div class="bundle-features">
-              <div class="feature">
+
+          <!-- Right Side - Content -->
+          <div class="bundle-right">
+            <div class="bundle-header-compact">
+              <h2 class="bundle-title-compact">All Website Bundle</h2>
+              <div class="bundle-tags-compact">
+                <span class="premium-tag-compact">PREMIUM</span>
+                <span class="guarantee-tag-compact">100% GUARANTEE</span>
+              </div>
+            </div>
+
+            <div class="bundle-features-compact">
+              <div class="feature-compact">
                 <i class="fas fa-check"></i>
                 <span>10 Premium Templates</span>
               </div>
-              <div class="feature">
-                <i class="fas fa-check"></i>
+              <div class="feature-compact">
+                <i class="fas fa-sync-alt"></i>
                 <span>Lifetime Updates</span>
               </div>
-              <div class="feature">
-                <i class="fas fa-check"></i>
+              <div class="feature-compact">
+                <i class="fas fa-headset"></i>
                 <span>24/7 Support</span>
               </div>
-              <div class="feature">
-                <i class="fas fa-check"></i>
-                <span>Documentation Included</span>
+            </div>
+
+            <div class="bundle-price-compact">
+              <div class="price-display">
+                <span class="original-price-compact">₹4,999</span>
+                <span class="current-price-compact">₹199</span>
+              </div>
+              <div class="bundle-stats-compact">
+                <span class="stat-compact">10K+ Developers</span>
+                <span class="stat-compact">⭐ 4.9 Rating</span>
               </div>
             </div>
-            <div class="bundle-price">
-              <span class="original-price">₹4999</span>
-              <span class="discount-price">₹199 ✅</span>
+
+            <div class="bundle-cta-compact">
+              <button class="btn btn-primary bundle-btn-compact">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Get Bundle Now - ₹199</span>
+              </button>
+              <div class="trust-badges-compact">
+                <span><i class="fas fa-shield-alt"></i> 30-Day Guarantee</span>
+                <span><i class="fas fa-clock"></i> Instant Download</span>
+              </div>
             </div>
-            <button class="btn btn-primary bundle-btn">Buy Now - ₹199</button>
           </div>
         </div>
       </div>
@@ -439,6 +464,15 @@
 
         <!-- Featured Review -->
         <div class="featured-review">
+          <div class="featured-review-header">
+            <div class="review-quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <div class="review-badge">
+              <span class="badge-text">Featured Review</span>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
           <div class="featured-review-content">
             <div class="customer-profile">
               <div class="profile-avatar">
@@ -449,10 +483,15 @@
                 <div class="verified-badge">
                   <i class="fas fa-check"></i>
                 </div>
+                <div class="online-status"></div>
               </div>
               <div class="profile-info">
                 <h4>Rajesh Kumar</h4>
                 <p class="customer-title">E-Commerce Store Owner</p>
+                <div class="review-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>Verified Purchase • 2 weeks ago</span>
+                </div>
               </div>
             </div>
             <div class="review-rating">
@@ -464,23 +503,41 @@
                 <i class="fas fa-star"></i>
               </div>
               <span class="rating-text">5.0</span>
+              <div class="helpful-count">
+                <i class="far fa-thumbs-up"></i>
+                <span>127 people found this helpful</span>
+              </div>
             </div>
             <div class="review-text">
               <p>
-                "This website bundle is life-changing! My monthly sales doubled
-                after implementing these templates. Code quality is excellent
-                and customization is super easy."
+                "I can’t believe I got 10 fully functional websites for just ₹199! Each website looks professional, is responsive, and works perfectly. This is a steal and saves so much time compared to building from scratch. Highly recommend this bundle! 🤩🫡"
               </p>
             </div>
             <div class="review-stats">
               <div class="stat">
                 <span class="stat-number">₹2.5L</span>
                 <span class="stat-label">Monthly Revenue</span>
+                <div class="stat-progress">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
               </div>
               <div class="stat">
                 <span class="stat-number">150%</span>
                 <span class="stat-label">Sales Increase</span>
+                <div class="stat-progress">
+                  <div class="progress-bar" style="width: 90%"></div>
+                </div>
               </div>
+            </div>
+            <div class="review-actions">
+              <button class="action-btn helpful-btn">
+                <i class="far fa-thumbs-up"></i>
+                <span>Helpful</span>
+              </button>
+              <button class="action-btn share-btn">
+                <i class="far fa-share-square"></i>
+                <span>Share</span>
+              </button>
             </div>
           </div>
         </div>
@@ -492,12 +549,21 @@
             <div class="review-header">
               <div class="customer-avatar">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=40&h=40&fit=crop&crop=face&auto=format&q=80"
+                  src="Review/image 4.jpg"
                   alt="Priya Sharma"
                 />
+                <div class="verified-badge-small">
+                  <i class="fas fa-check"></i>
+                </div>
               </div>
               <div class="review-meta">
-                <h4>Priya Sharma</h4>
+                <div class="review-meta-header">
+                  <h4>Priya Sharma</h4>
+                  <div class="review-verification">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Verified</span>
+                  </div>
+                </div>
                 <p class="customer-role">Freelance Designer</p>
                 <div class="review-stars">
                   <i class="fas fa-star"></i>
@@ -505,14 +571,27 @@
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
+                  <span class="star-rating">5.0</span>
+                </div>
+                <div class="review-date">
+                  <i class="far fa-clock"></i>
+                  <span>3 weeks ago</span>
                 </div>
               </div>
             </div>
             <div class="review-body">
+              <div class="review-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
               <p>
-                "Clean and modern templates. Perfect for client projects. Fully
-                responsive and easy to customize."
+             "Honestly, I didn’t expect much at this price, but I ended up winning my college innovation event using the Mock Coding Contest website. Judges were impressed by how functional it was. Thank you so much sir ❤️📈"
               </p>
+              <div class="review-actions">
+                <button class="action-btn-small helpful-btn">
+                  <i class="far fa-thumbs-up"></i>
+                  <span>Helpful (23)</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -521,27 +600,48 @@
             <div class="review-header">
               <div class="customer-avatar">
                 <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face&auto=format&q=80"
+                  src="Review/image 3.jpg"
                   alt="Amit Patel"
                 />
+                <div class="verified-badge-small">
+                  <i class="fas fa-check"></i>
+                </div>
               </div>
               <div class="review-meta">
-                <h4>Amit Patel</h4>
+                <div class="review-meta-header">
+                  <h4>Amit Patel</h4>
+                  <div class="review-verification">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Verified</span>
+                  </div>
+                </div>
                 <p class="customer-role">Startup Founder</p>
                 <div class="review-stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <span class="star-rating">4.0</span>
+                </div>
+                <div class="review-date">
+                  <i class="far fa-clock"></i>
+                  <span>1 month ago</span>
                 </div>
               </div>
             </div>
             <div class="review-body">
+              <div class="review-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
               <p>
-                "Saved months of development time. Excellent documentation and
-                responsive support team. Highly recommended."
+               "I used the Quiz Battle website from this bundle for my college hackathon project, and our team actually won the first prize! The code was clean and ready to present, which saved us so much time. Thank you so much sir.🔥🚀"
               </p>
+              <div class="review-actions">
+                <button class="action-btn-small helpful-btn">
+                  <i class="far fa-thumbs-up"></i>
+                  <span>Helpful (45)</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -550,12 +650,21 @@
             <div class="review-header">
               <div class="customer-avatar">
                 <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face&auto=format&q=80"
+                  src="Review/image 2.jpg"
                   alt="Sneha Gupta"
                 />
+                <div class="verified-badge-small">
+                  <i class="fas fa-check"></i>
+                </div>
               </div>
               <div class="review-meta">
-                <h4>Sneha Gupta</h4>
+                <div class="review-meta-header">
+                  <h4>Sneha Gupta</h4>
+                  <div class="review-verification">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Verified</span>
+                  </div>
+                </div>
                 <p class="customer-role">Digital Marketer</p>
                 <div class="review-stars">
                   <i class="fas fa-star"></i>
@@ -563,14 +672,27 @@
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
+                  <span class="star-rating">5.0</span>
+                </div>
+                <div class="review-date">
+                  <i class="far fa-clock"></i>
+                  <span>2 weeks ago</span>
                 </div>
               </div>
             </div>
             <div class="review-body">
+              <div class="review-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
               <p>
-                "SEO-friendly code with amazing loading speed. Professional
-                design that impressed all our clients."
+                "These websites are perfect for hackathons. I used the Roadmaps Generator website in an inter-college event, and our team secured second place. Easy to customize and present. Thank you so much sir 😊"
               </p>
+              <div class="review-actions">
+                <button class="action-btn-small helpful-btn">
+                  <i class="far fa-thumbs-up"></i>
+                  <span>Helpful (31)</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -579,12 +701,21 @@
             <div class="review-header">
               <div class="customer-avatar">
                 <img
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face&auto=format&q=80"
+                  src="Review/image 1.avif"
                   alt="Vikram Singh"
                 />
+                <div class="verified-badge-small">
+                  <i class="fas fa-check"></i>
+                </div>
               </div>
               <div class="review-meta">
-                <h4>Vikram Singh</h4>
+                <div class="review-meta-header">
+                  <h4>Vikram Singh</h4>
+                  <div class="review-verification">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Verified</span>
+                  </div>
+                </div>
                 <p class="customer-role">Web Developer</p>
                 <div class="review-stars">
                   <i class="fas fa-star"></i>
@@ -592,14 +723,27 @@
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
+                  <span class="star-rating">5.0</span>
+                </div>
+                <div class="review-date">
+                  <i class="far fa-clock"></i>
+                  <span>5 days ago</span>
                 </div>
               </div>
             </div>
             <div class="review-body">
+              <div class="review-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
               <p>
-                "Clean, well-commented code that follows best practices. Perfect
-                for professional development projects."
+                "Wow! I was expecting maybe 2–3 decent websites, but this bundle has 10 amazing websites for such a low price. Every website is fully functional, and the layouts are professional. Best investment ever!🙌"
               </p>
+              <div class="review-actions">
+                <button class="action-btn-small helpful-btn">
+                  <i class="far fa-thumbs-up"></i>
+                  <span>Helpful (67)</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
