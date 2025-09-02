@@ -179,7 +179,7 @@ This project is open source and available under the MIT License.
 ## Support
 
 For support or questions, contact:
-- Email: support@webaddicted.in
+- Email: contact@webaddicted.in
 - Website: https://webaddicted.in
 
 ---
