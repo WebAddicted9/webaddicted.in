@@ -43,14 +43,30 @@ function updateThemeIcon(theme) {
 
 // Mobile Menu
 function toggleMobileMenu() {
+  if (!navMenu || !hamburger) {
+    console.error("Mobile menu elements not found:", { navMenu, hamburger });
+    return;
+  }
+
+  const isOpen = navMenu.classList.contains("mobile-menu");
   navMenu.classList.toggle("mobile-menu");
   hamburger.classList.toggle("active");
+
+  // Prevent body scroll when mobile menu is open
+  if (!isOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 }
 
 // Close mobile menu when clicking a link
 function closeMobileMenu() {
+  if (!navMenu || !hamburger) return;
+
   navMenu.classList.remove("mobile-menu");
   hamburger.classList.remove("active");
+  document.body.style.overflow = '';
 }
 
 // FAQ Accordion
@@ -120,20 +136,27 @@ function updateActiveNavLink() {
 function initSmoothScrolling() {
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
+      const href = link.getAttribute("href");
 
-      if (targetSection) {
-        const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth",
-        });
+      // If it's a hash link (smooth scroll), prevent default and handle it
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href;
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
+        }
       }
 
-      // Close mobile menu after clicking
-      closeMobileMenu();
+      // Close mobile menu after clicking any link
+      setTimeout(() => {
+        closeMobileMenu();
+      }, 100);
     });
   });
 }
@@ -215,6 +238,11 @@ function showFormMessage(message, type) {
 
 // Back to Top Button Functionality
 function initBackToTop() {
+  // Check if back-to-top button exists
+  if (!backToTopBtn) {
+    return; // Exit if button doesn't exist on this page
+  }
+
   // Show/hide button based on scroll position
   function toggleBackToTop() {
     const scrollPosition = window.scrollY;
@@ -371,9 +399,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 300);
 
   // Event Listeners
-  themeToggle.addEventListener("click", toggleTheme);
-  hamburger.addEventListener("click", toggleMobileMenu);
-  contactForm.addEventListener("submit", handleContactForm);
+  if (themeToggle) {
+    themeToggle.addEventListener("click", toggleTheme);
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener("click", toggleMobileMenu);
+  } else {
+    console.error("Hamburger element not found!");
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", handleContactForm);
+  }
 
   // Newsletter form listener
   if (newsletterForm) {
@@ -383,13 +421,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // FAQ accordion listeners
   faqItems.forEach((item) => {
     const question = item.querySelector(".faq-question");
-    question.addEventListener("click", () => toggleFAQ(item));
+    if (question) {
+      question.addEventListener("click", () => toggleFAQ(item));
+    }
   });
 
   // Close mobile menu when clicking outside
   document.addEventListener("click", (e) => {
-    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-      closeMobileMenu();
+    if (hamburger && navMenu) {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        closeMobileMenu();
+      }
     }
   });
 
@@ -482,7 +524,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Handle window resize for mobile menu
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 768 && hamburger && navMenu) {
     closeMobileMenu();
   }
 });
@@ -490,7 +532,7 @@ window.addEventListener("resize", () => {
 // Add keyboard navigation support
 document.addEventListener("keydown", (e) => {
   // Escape key closes mobile menu
-  if (e.key === "Escape") {
+  if (e.key === "Escape" && hamburger && navMenu) {
     closeMobileMenu();
   }
 });
@@ -499,7 +541,21 @@ document.addEventListener("keydown", (e) => {
 class ConfettiCanvas {
   constructor() {
     this.canvas = document.getElementById('confetti-canvas');
+
+    // Check if canvas element exists
+    if (!this.canvas) {
+      console.warn('Confetti canvas element not found on this page');
+      return;
+    }
+
     this.ctx = this.canvas.getContext('2d');
+
+    // Check if context was successfully created
+    if (!this.ctx) {
+      console.error('Could not get 2D context from confetti canvas');
+      return;
+    }
+
     this.particles = [];
     this.animationId = null;
     this.isActive = false;
@@ -509,6 +565,7 @@ class ConfettiCanvas {
   }
 
   resizeCanvas() {
+    if (!this.canvas) return;
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
   }
@@ -537,7 +594,7 @@ class ConfettiCanvas {
   }
 
   start(x, y, particleCount = 150) {
-    if (this.isActive) return;
+    if (this.isActive || !this.canvas || !this.ctx) return;
 
     this.isActive = true;
     this.particles = [];
@@ -551,6 +608,8 @@ class ConfettiCanvas {
   }
 
   animate() {
+    if (!this.canvas || !this.ctx) return;
+
     // Clear canvas completely for better performance
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -608,7 +667,9 @@ class ConfettiCanvas {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
     }
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    if (this.canvas && this.ctx) {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
   }
 }
 
@@ -624,43 +685,45 @@ function initBundleAnimations() {
   const bundleBtn = document.querySelector('.bundle-btn-compact');
   const features = document.querySelectorAll('.feature-compact');
 
-  // Initialize confetti canvas
-  if (!confettiCanvas) {
+  // Only initialize confetti canvas if bundle section exists
+  if (!confettiCanvas && bundleSection) {
     confettiCanvas = new ConfettiCanvas();
   }
 
   // Intersection Observer for bundle section - trigger confetti on first visit
-  let hasTriggeredConfetti = false;
-  const bundleObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && !hasTriggeredConfetti) {
-        hasTriggeredConfetti = true;
-
-        // Trigger confetti animation after a short delay
-        setTimeout(() => {
-          const rect = bundleSection.getBoundingClientRect();
-          const centerX = rect.left + rect.width / 2;
-          const centerY = rect.top + rect.height / 2;
-
-          // Enhanced confetti burst on section visit
-          confettiCanvas.start(centerX, centerY, 120);
-
-          // Add a small follow-up burst
-          setTimeout(() => {
-            confettiCanvas.start(centerX, centerY, 80);
-          }, 300);
-        }, 500);
-
-        // Trigger other animations
-        triggerBundleAnimations();
-      }
-    });
-  }, {
-    threshold: 0.3,
-    rootMargin: '0px 0px -100px 0px'
-  });
-
   if (bundleSection) {
+    let hasTriggeredConfetti = false;
+    const bundleObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasTriggeredConfetti) {
+          hasTriggeredConfetti = true;
+
+          // Trigger confetti animation after a short delay
+          setTimeout(() => {
+            const rect = bundleSection.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Enhanced confetti burst on section visit
+            if (confettiCanvas) {
+              confettiCanvas.start(centerX, centerY, 120);
+
+              // Add a small follow-up burst
+              setTimeout(() => {
+                confettiCanvas.start(centerX, centerY, 80);
+              }, 300);
+            }
+          }, 500);
+
+          // Trigger other animations
+          triggerBundleAnimations();
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '0px 0px -100px 0px'
+    });
+
     bundleObserver.observe(bundleSection);
   }
 
@@ -686,7 +749,9 @@ function initBundleAnimations() {
       const centerY = rect.top + rect.height / 2;
 
       setTimeout(() => {
-        confettiCanvas.start(centerX, centerY, 60);
+        if (confettiCanvas) {
+          confettiCanvas.start(centerX, centerY, 60);
+        }
       }, 200);
     });
 
@@ -705,12 +770,14 @@ function initBundleAnimations() {
       const centerY = rect.top + rect.height / 2;
 
       // Enhanced celebration confetti effect
-      confettiCanvas.start(centerX, centerY, 100);
+      if (confettiCanvas) {
+        confettiCanvas.start(centerX, centerY, 100);
 
-      // Add a small follow-up burst
-      setTimeout(() => {
-        confettiCanvas.start(centerX, centerY, 70);
-      }, 250);
+        // Add a small follow-up burst
+        setTimeout(() => {
+          confettiCanvas.start(centerX, centerY, 70);
+        }, 250);
+      }
 
       // Add button press animation
       bundleBtn.style.transform = 'translateY(-1px) scale(0.98)';
@@ -848,7 +915,7 @@ document.addEventListener("touchstart", (e) => {
 });
 
 document.addEventListener("touchmove", (e) => {
-  if (!navMenu.classList.contains("mobile-menu")) return;
+  if (!navMenu || !navMenu.classList.contains("mobile-menu")) return;
 
   const touchY = e.touches[0].clientY;
   const diff = touchStartY - touchY;

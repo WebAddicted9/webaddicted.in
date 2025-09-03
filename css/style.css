@@ -166,6 +166,7 @@ p {
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    position: relative;
 }
 
 .nav-logo a {
@@ -1086,40 +1087,7 @@ p {
         margin-top: 8px;
     }
 
-    /* Bundle Section Mobile Enhancements */
-    .bundle-section {
-        padding: 60px 0;
-    }
 
-    .bundle-info h2 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-    }
-
-    .bundle-content {
-        gap: 30px;
-    }
-
-    .bundle-img {
-        max-width: 450px;
-    }
-
-    .bundle-features {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        justify-items: center;
-        max-width: 300px;
-        margin: 2rem auto;
-    }
-
-    .feature {
-        justify-content: center;
-        text-align: center;
-    }
-
-    .bundle-price {
-        justify-content: center;
-    }
 }
 
 /* Extra Small Devices */
@@ -1208,66 +1176,14 @@ p {
     }
 
     /* Bundle Section Extra Small Devices */
-    .bundle-info h2 {
-        font-size: 1.6rem;
-    }
 
-    .bundle-img {
-        max-width: 380px;
-    }
-
-    .bundle-content {
-        gap: 25px;
-    }
-
-    .bundle-features {
-        max-width: 280px;
-        gap: 12px;
-    }
 
     .feature {
         font-size: 0.9rem;
     }
 }
 
-    /* Bundle Section Responsive */
-    .bundle-section {
-        padding: 60px 0;
-    }
 
-    .bundle-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .bundle-info h2 {
-        text-align: center;
-        font-size: 1.8rem;
-        line-height: 1.2;
-    }
-
-    .bundle-img {
-        max-width: 450px;
-        margin: 0 auto;
-    }
-
-    .bundle-features {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        justify-items: center;
-        max-width: 300px;
-        margin: 2rem auto;
-    }
-
-    .feature {
-        justify-content: center;
-        text-align: center;
-    }
-
-    .bundle-price {
-        justify-content: center;
-    }
 
     /* Websites Section Responsive */
     .websites-grid {
@@ -3466,7 +3382,7 @@ p {
     }
 
     .nav-menu.mobile-menu {
-        display: flex;
+        display: flex !important;
         position: absolute;
         top: 70px;
         left: 0;
@@ -3476,11 +3392,15 @@ p {
         padding: 20px;
         box-shadow: var(--shadow-lg);
         border-top: 1px solid var(--border-color);
+        z-index: 1001;
+        border-radius: 0 0 8px 8px;
+        backdrop-filter: blur(10px);
     }
 
     /* Navbar Mobile Improvements */
     .nav-container {
         padding: 0 15px;
+        position: relative;
     }
 
     .nav-logo a {
@@ -3507,9 +3427,19 @@ p {
     }
 
     .nav-menu.mobile-menu a {
+        display: block;
         padding: 12px 0;
         font-size: 1rem;
         border-bottom: 1px solid var(--border-color);
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu.mobile-menu a:hover {
+        color: var(--primary-color);
+        padding-left: 10px;
     }
 
     .nav-menu.mobile-menu a:last-child {
@@ -3873,9 +3803,7 @@ p {
         font-size: 2rem;
     }
 
-    .bundle-info h2 {
-        font-size: 2rem;
-    }
+
 
     .contact-form {
         padding: 25px;
@@ -3987,9 +3915,7 @@ p {
         padding: 0 20px 18px;
     }
 
-    .bundle-features {
-        grid-template-columns: 1fr;
-    }
+
 
     /* Mobile Reviews */
     .reviews-grid {
